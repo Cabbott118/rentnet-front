@@ -1,32 +1,30 @@
+import React from 'react';
 import { withStyles } from '@material-ui/core';
-import React, { Component, Fragment } from 'react';
 
 // MUI
-
-// Redux
-import { connect } from 'react-redux';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 
 const styles = (theme) => ({
   ...theme.spreadThis,
 });
 
-class Home extends Component {
-  render() {
-    const { classes } = this.props;
-    return (
-      <div>
-        <p>Home</p>
-      </div>
-    );
-  }
+function Home({ classes }) {
+  return (
+    <Grid
+      container
+      direction='column'
+      justify='center'
+      alignItems='center'
+      className={classes.homePage}
+    >
+      <Grid item>
+        <Typography variant='h1' color='secondary'>
+          Home
+        </Typography>
+      </Grid>
+    </Grid>
+  );
 }
 
-// Home.propTypes = {
-//   data: PropTypes.func.isRequired,
-// };
-
-const mapStateToProps = (state) => ({
-  data: state.data,
-});
-
-export default connect(mapStateToProps, {})(withStyles(styles)(Home));
+export default withStyles(styles)(Home);

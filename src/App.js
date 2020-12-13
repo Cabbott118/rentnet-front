@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // MUI
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
-import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
-
-// Redux
-import { Provider } from 'react-redux';
-import store from './redux/store';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 // Components & Pages
+import Nav from './components/Nav';
 import Home from './pages/Home';
 
 // Utility
@@ -17,22 +13,20 @@ import themeFile from './util/theme';
 
 const theme = createMuiTheme(themeFile);
 
-class App extends Component {
-  render() {
-    return (
-      <MuiThemeProvider theme={theme}>
-        <Provider store={store}>
-          <div className='App'>
-            <Router>
-              <Switch>
-                <Route exact path='/' component={Home} />
-              </Switch>
-            </Router>
-          </div>
-        </Provider>
-      </MuiThemeProvider>
-    );
-  }
+export default function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <div className='App'>
+        <Router>
+          <Nav />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/about-us' component={Home} />
+            <Route exact path='/blog' component={Home} />
+            <Route exact path='/contact' component={Home} />
+          </Switch>
+        </Router>
+      </div>
+    </ThemeProvider>
+  );
 }
-
-export default App;
