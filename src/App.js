@@ -16,6 +16,7 @@ import AboutMe from './pages/AboutMe';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import FourOhFour from './pages/FourOhFour';
+import BillGo from './pages/BillGo';
 
 // Utility
 import themeFile from './util/theme';
@@ -33,6 +34,7 @@ export default function App() {
             <Route exact path='/about-me' component={AboutMe} />
             <Route exact path='/blog' component={Blog} />
             <Route exact path='/contact' component={Contact} />
+            <Route exact path='/bill-go' component={BillGo} />
             <Route path='/404' component={FourOhFour} />
             <Redirect to='/404' />
           </Switch>

@@ -4,12 +4,19 @@ import { makeStyles } from '@material-ui/core/styles';
 // MUI
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const useStyles = makeStyles((theme) => ({
-  homePage: theme.spreadThis.homePage,
+  billGoPage: theme.spreadThis.billGoPage,
+  root: {
+    display: 'flex',
+    '& > * + *': {
+      marginLeft: theme.spacing(2),
+    },
+  },
 }));
 
-export default function Home() {
+export default function BillGo() {
   const classes = useStyles();
   return (
     <Grid
@@ -17,19 +24,17 @@ export default function Home() {
       direction='column'
       justify='center'
       alignItems='center'
-      className={classes.homePage}
+      className={classes.billGoPage}
     >
       <Grid item>
-        <Typography variant='h1' color='primary' align='center'>
-          Home
+        <Typography variant='h1' color='primary'>
+          BillGo
         </Typography>
         <Typography variant='body1' color='primary' align='center'>
-          This is a React-MUI template created by Caleb Abbott.
+          Sorry, we're experiencing some major technical difficulties. Please
+          try again in 4-6 years.
         </Typography>
-        <Typography variant='body1' color='primary' align='center'>
-          Coming Soon - Redux implementation with User auth and UI loading
-          state.
-        </Typography>
+        <CircularProgress color='secondary' />
       </Grid>
     </Grid>
   );
