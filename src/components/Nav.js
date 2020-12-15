@@ -32,11 +32,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Nav(props) {
+export default function Nav() {
   const classes = useStyles();
   const navLinks = [
     { title: 'Home', path: '/' },
-    { title: 'About Us', path: '/about-us' },
+    { title: 'About Me', path: '/about-me' },
     { title: 'Blog', path: '/blog' },
     { title: 'Contact', path: '/contact' },
   ];

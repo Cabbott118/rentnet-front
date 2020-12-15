@@ -15,7 +15,8 @@ const useStyles = makeStyles((theme) => ({
   list: {
     width: 250,
     height: '100vh',
-    backgroundColor: theme.palette.secondary.dark,
+    // backgroundColor: theme.palette.primary.dark,
+    background: '#2a262c',
   },
   linkText: {
     textDecoration: 'none',

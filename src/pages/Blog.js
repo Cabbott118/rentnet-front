@@ -6,10 +6,10 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
-  homePage: theme.spreadThis.homePage,
+  blogPage: theme.spreadThis.blogPage,
 }));
 
-export default function Home() {
+export default function Blog() {
   const classes = useStyles();
   return (
     <Grid
@@ -17,11 +17,11 @@ export default function Home() {
       direction='column'
       justify='center'
       alignItems='center'
-      className={classes.homePage}
+      className={classes.blogPage}
     >
       <Grid item>
         <Typography variant='h1' color='primary'>
-          Home
+          Blog
         </Typography>
       </Grid>
     </Grid>
