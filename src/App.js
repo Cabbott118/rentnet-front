@@ -16,7 +16,6 @@ import AboutMe from './pages/AboutMe';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import FourOhFour from './pages/FourOhFour';
-import BillGo from './pages/BillGo';
 import TheGame from './pages/TheGame';
 
 // Utility
@@ -35,7 +34,6 @@ export default function App() {
             <Route exact path='/about-me' component={AboutMe} />
             <Route exact path='/blog' component={Blog} />
             <Route exact path='/contact' component={Contact} />
-            <Route exact path='/bill-go' component={BillGo} />
             <Route exact path='/the-game' component={TheGame} />
             <Route path='/404' component={FourOhFour} />
             <Redirect to='/404' />
