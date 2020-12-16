@@ -33,7 +33,7 @@ export default {
     billGoPage: {
       background: `url('/images/poop.jpg') center center/cover no-repeat`,
       minHeight: '100vh',
-      boxShadow: 'inset 0 0 0 1000px rgba(0, 0, 0, 0.5)',
+      boxShadow: 'inset 0 0 0 1000px rgba(0, 0, 0, 0.7)',
     },
     fourOhFourPage: {
       // background: '#eceff1',

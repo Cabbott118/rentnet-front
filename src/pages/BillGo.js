@@ -27,14 +27,18 @@ export default function BillGo() {
       className={classes.billGoPage}
     >
       <Grid item>
-        <Typography variant='h1' color='primary'>
+        <Typography variant='h1' color='primary' align='center'>
           BillGo
         </Typography>
-        <Typography variant='body1' color='primary' align='center'>
+      </Grid>
+      <Grid item>
+        <CircularProgress color='secondary' size={100} />
+      </Grid>
+      <Grid item>
+        <Typography variant='h6' color='secondary' align='center'>
           Sorry, we're experiencing some major technical difficulties. Please
           try again in 4-6 years.
         </Typography>
-        <CircularProgress color='secondary' />
       </Grid>
     </Grid>
   );
