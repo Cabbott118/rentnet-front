@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-
 import TextLoop from 'react-text-loop';
 
 // MUI
@@ -9,9 +8,6 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   homePage: theme.spreadThis.homePage,
-  scrollingText: {
-    color: '#5e8d93',
-  },
 }));
 
 export default function Home() {
@@ -31,16 +27,18 @@ export default function Home() {
         <Typography variant='h5' color='primary' align='center'>
           This is a React-MUI template created by Caleb Abbott.
         </Typography>
-        <Typography variant='h6' color='primary' align='center'>
-          Coming Soon -{' '}
-          <TextLoop
-            className={classes.scrollingText}
-            children={[
-              'Redux Template',
-              'User Authentication',
-              'UI Loading State',
-            ]}
-          ></TextLoop>
+        <Typography variant='h6' color='secondary' align='center'>
+          Coming Soon
+          <Typography variant='h6' color='secondary'>
+            <TextLoop
+              springConfig={{ stiffness: 180, damping: 3 }}
+              children={[
+                'Redux Template',
+                'User Authentication',
+                'UI Loading State',
+              ]}
+            ></TextLoop>
+          </Typography>
         </Typography>
         <Typography variant='body1' color='primary'></Typography>
       </Grid>

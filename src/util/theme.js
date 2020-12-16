@@ -35,6 +35,11 @@ export default {
       minHeight: '100vh',
       boxShadow: 'inset 0 0 0 1000px rgba(0, 0, 0, 0.7)',
     },
+    theGamePage: {
+      // background: '#eceff1',
+      background: '#2a262c',
+      minHeight: '100vh',
+    },
     fourOhFourPage: {
       // background: '#eceff1',
       background: '#2a262c',
