@@ -50,7 +50,7 @@ export default function FourOhFour() {
             <Typography variant='h2' color='secondary'>
               <TextLoop
                 interval={1000}
-                springConfig={{ stiffness: 180, damping: 9 }}
+                springConfig={{ stiffness: 180, damping: 3 }}
                 children={['Not', '']}
               ></TextLoop>
             </Typography>
