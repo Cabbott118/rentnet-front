@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 
 // MUI
-// IconButton has been declared in 'Nav'
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -15,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
   list: {
     width: 250,
     height: '100vh',
-    // backgroundColor: theme.palette.primary.dark,
     background: '#2a262c',
   },
   linkText: {
@@ -25,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Drawer = ({ navLinks }) => {
+const Drawer = ({ navLinks, userLinks }) => {
   const classes = useStyles();
   const [state, setState] = useState({ right: false });
   const toggleDrawer = (anchor, open) => (event) => {
@@ -46,6 +44,13 @@ const Drawer = ({ navLinks }) => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List component='nav'>
+        {userLinks.map(({ title, path }) => (
+          <Link to={path} key={title} className={classes.linkText}>
+            <ListItem button>
+              <ListItemText primary={title} />
+            </ListItem>
+          </Link>
+        ))}
         {navLinks.map(({ title, path }) => (
           <Link to={path} key={title} className={classes.linkText}>
             <ListItem button>

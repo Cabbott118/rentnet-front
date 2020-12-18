@@ -32,14 +32,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Nav() {
+export default function Nav(props) {
   const classes = useStyles();
-  const navLinks = [
-    { title: 'Home', path: '/' },
-    { title: 'About Me', path: '/about-me' },
-    { title: 'Blog', path: '/blog' },
-    { title: 'Contact', path: '/contact' },
+  const {
+    auth: { isAuthenticated },
+  } = props;
+
+  const navLinks = [{ title: 'Trailers', path: '/trailers' }];
+  const guestLinks = [
+    { title: 'Login', path: '/login' },
+    { title: 'Register', path: '/register' },
   ];
+  const authLinks = [{ title: 'Dashboard', path: `/dashboard` }];
 
   return (
     <Fragment>
@@ -62,6 +66,29 @@ export default function Nav() {
                   aria-labelledby='main navigation'
                   className={classes.navDisplayFlex}
                 >
+                  {isAuthenticated === true
+                    ? authLinks.map(({ title, path }) => (
+                        <Link
+                          to={path}
+                          key={title}
+                          className={classes.linkText}
+                        >
+                          <ListItem button>
+                            <ListItemText primary={title} />
+                          </ListItem>
+                        </Link>
+                      ))
+                    : guestLinks.map(({ title, path }) => (
+                        <Link
+                          to={path}
+                          key={title}
+                          className={classes.linkText}
+                        >
+                          <ListItem button>
+                            <ListItemText primary={title} />
+                          </ListItem>
+                        </Link>
+                      ))}
                   {navLinks.map(({ title, path }) => (
                     <Link to={path} key={title} className={classes.linkText}>
                       <ListItem button>
@@ -72,7 +99,10 @@ export default function Nav() {
                 </List>
               </Hidden>
               <Hidden mdUp>
-                <Drawer navLinks={navLinks} />
+                <Drawer
+                  navLinks={navLinks}
+                  userLinks={isAuthenticated ? authLinks : guestLinks}
+                />
               </Hidden>
             </Container>
           </Toolbar>

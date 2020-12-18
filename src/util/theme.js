@@ -15,27 +15,17 @@ export default {
       minHeight: '100vh',
       boxShadow: 'inset 0 0 0 1000px rgba(0, 0, 0, 0.5)',
     },
-    aboutMePage: {
+    loginPage: {
       // background: '#eceff1',
-      background: '#2a262c',
+      background: '#fff',
       minHeight: '100vh',
     },
-    blogPage: {
+    registerPage: {
       // background: '#eceff1',
-      background: '#2a262c',
+      background: '#fff',
       minHeight: '100vh',
     },
-    contactPage: {
-      // background: '#eceff1',
-      background: '#2a262c',
-      minHeight: '100vh',
-    },
-    billGoPage: {
-      background: `url('/images/poop.jpg') center center/cover no-repeat`,
-      minHeight: '100vh',
-      boxShadow: 'inset 0 0 0 1000px rgba(0, 0, 0, 0.7)',
-    },
-    theGamePage: {
+    dashboardPage: {
       // background: '#eceff1',
       background: '#2a262c',
       minHeight: '100vh',
@@ -44,6 +34,12 @@ export default {
       // background: '#eceff1',
       background: '#2a262c',
       minHeight: '100vh',
+    },
+    formGridItem: {
+      maxWdith: '500px',
+    },
+    textFields: {
+      margin: '10px auto 10px auto',
     },
     button: {
       textTransform: 'none',

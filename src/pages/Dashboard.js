@@ -5,11 +5,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
+// Components
+import Logout from '../components/Logout';
+
 const useStyles = makeStyles((theme) => ({
-  contactPage: theme.spreadThis.contactPage,
+  dashboardPage: theme.spreadThis.dashboardPage,
 }));
 
-export default function Contact() {
+export default function Dashboard() {
   const classes = useStyles();
   return (
     <Grid
@@ -17,12 +20,13 @@ export default function Contact() {
       direction='column'
       justify='center'
       alignItems='center'
-      className={classes.contactPage}
+      className={classes.dashboardPage}
     >
       <Grid item>
-        <Typography variant='h1' color='primary'>
-          Contact
+        <Typography variant='h3' color='primary'>
+          Dashboard
         </Typography>
+        <Logout />
       </Grid>
     </Grid>
   );

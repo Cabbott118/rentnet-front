@@ -27,18 +27,12 @@ export default function FourOhFour() {
       className={classes.fourOhFourPage}
     >
       <Grid item>
-        <Typography variant='h1' color='primary' align='center'>
+        <Typography variant='h2' color='primary' align='center'>
           Error Code: 404
         </Typography>
-        <Grid
-          container
-          spacing={2}
-          direction='row'
-          justify='center'
-          alignItems='center'
-        >
+        <Grid container direction='row' justify='center' alignItems='center'>
           <Grid item>
-            <Typography variant='h2' color='secondary'>
+            <Typography variant='h4' color='secondary'>
               <TextLoop
                 interval={1000}
                 springConfig={{ stiffness: 180, damping: 3 }}
@@ -47,7 +41,7 @@ export default function FourOhFour() {
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant='h2' color='secondary'>
+            <Typography variant='h4' color='secondary'>
               <TextLoop
                 interval={1000}
                 springConfig={{ stiffness: 180, damping: 3 }}
@@ -56,7 +50,7 @@ export default function FourOhFour() {
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant='h2' color='secondary'>
+            <Typography variant='h4' color='secondary'>
               <TextLoop
                 interval={1000}
                 springConfig={{ stiffness: 180, damping: 3 }}
@@ -71,7 +65,6 @@ export default function FourOhFour() {
           variant='outlined'
           color='secondary'
           onClick={onClick}
-          fullwidth
           style={{ marginTop: '10px' }}
           className={classes.button}
         >
